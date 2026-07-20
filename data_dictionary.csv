@@ -1,0 +1,11 @@
+file_name,original_column,recommended_name,description,unit,data_type,source,processing_note
+all,Time,time_raw,"Recorded time stamp in the original data-acquisition format",mm:ss.s,string,DAQ,"Convert to elapsed time in seconds when required"
+all,LT,lt_signal,"LT signal or status recorded by the experimental system; replace this description with the exact physical meaning of LT",-,numeric,DAQ,None
+all,Pump_1 [L/m],pump_1_flow_L_min,"Flow rate associated with Pump 1",L/min,numeric,DAQ,None
+all,Pump_2 [L/m],pump_2_flow_L_min,"Flow rate associated with Pump 2",L/min,numeric,DAQ,None
+all,Voltage [V],stack_voltage_V,"Measured PEM electrolyzer stack voltage",V,numeric,Voltage measurement,None
+all,Current [A],stack_current_A,"Measured PEM electrolyzer stack current",A,numeric,Current measurement,None
+all,Input_current [A],input_current_A,"Input-current signal applied to or recorded from the electrolyzer controller; specify whether this is a current reference or a measured DC-link current",A,numeric,Controller/DAQ,"No processing"
+all,E_h2_production [mL/0.1s],hydrogen_production_mL_per_0p1s,"Measured hydrogen production during each 0.1-s interval",mL/0.1s,numeric,Hydrogen-flow measurement,"Multiply by 10 to convert to mL/s"
+all,Power,stack_power_W,"Stack-side electrical power consumption calculated as stack voltage multiplied by stack current",W,numeric,Calculated,"Power = Voltage × Current"
+all,ref,power_reference_W,"Electrical power reference calculated from stack voltage and input-current signal",W,numeric,Calculated,"ref = Voltage × Input_current; confirm this definition"
